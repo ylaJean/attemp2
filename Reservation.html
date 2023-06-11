@@ -1,0 +1,102 @@
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Reservation</title>
+    <link rel="icon" type="image/x-icon" href="LOGO.png">
+    <link rel="stylesheet" href="website.css"></head>
+   
+
+    </div>
+    <body class="background4">
+        
+        <header class="header" id="navigation-menu">
+            <div class="container">
+              <nav>
+                <a href="#" class="logo"> <img src="LOGO.png" alt=""> </a>
+        
+                <ul class="nav-menu">
+                  <li> <a href="Menu.html" class="nav-link">Menu</a> </li>
+                  <li> <a href="Tresor Pates.html" class="nav-link">Home</a> </li>
+                  
+                </ul>
+                
+        
+                <div class="hambuger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+              </nav>
+            </div>
+          </header>
+          <script>
+            const hambuger = document.querySelector('.hambuger');
+            const navMenu = document.querySelector('.nav-menu');
+        
+            hambuger.addEventListener("click", mobileMenu);
+        
+            function mobileMenu() {
+              hambuger.classList.toggle("active");
+              navMenu.classList.toggle("active");
+            }
+        
+            const navLink = document.querySelectorAll('.nav-link');
+            navLink.forEach((n) => n.addEventListener("click", closeMenu));
+        
+            function closeMenu() {
+              hambuger.classList.remove("active");
+              navMenu.classList.remove("active");
+            }
+          </script>
+ 
+        <div class="form">       
+        <form action= "TresorLibrary.php" method="post">
+            <label >Name </label>
+            <input type="text" id="name" name="name" placeholder="Last Name, First Name, MI" required>
+
+            <label>Date of Reservation</label>
+            <input type="text" id="date" name="date" placeholder="YYYY-MM-DD" required>
+            <label>Card Number</label>
+            <input type="text" id="CardNumber" name="CardNumber" placeholder="5376 9865 0836 6898" maxlength= "16" required>
+            <label>Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" required >
+            <label>Number of Guest</label>
+            <input type="number" id="numberofguest" name="numberofguest" placeholder="Quantity" required>
+            <button class="btn btn-success" type="submit"  value="submit" onclick="openPopup()">Reserve</button>
+        </form>
+       
+      
+            <video width="320" height="240" controls>
+                <source src="resto.mp4" type="video/mp4">
+              </video>     
+            
+        <div class="popup" id="popup">
+            <img src="LOGO.png">
+  
+            <h2>Submit Reservation? </h2>
+            <p>By Submiting this form note that there is no cancelation of reservation but if you must the reservation fee will be charge in your bank account.</p>
+            <button  class="btn btn-success" type="button" onclick="closePopup()" onclick="document.getElementById('click').style.color='chocolate'"><a class="aa" id=click href="RESERVATION COMPLETED.html">Reserve</a></button>
+            <button class="btn btn-warning" type="button" onclick="closePopup()" onclick="document.getElementById('click').style.color='chocolate'"><a class="aa">Cancel</a></button>
+        </div>
+        <Script>
+            let popup=document.getElementById("popup");
+
+            function openPopup(){
+                popup.classList.add("open-popup");
+
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+        </Script>
+
+            
+           
+</div>
+  
+        </div>
+        </body>
+</html>
